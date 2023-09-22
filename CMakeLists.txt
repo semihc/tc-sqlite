@@ -34,8 +34,13 @@ add_definitions(-DSQLITE_ENABLE_FTS5)
 add_definitions(-DSQLITE_ENABLE_JSON1)
 add_definitions(-DSQLITE_ENABLE_RBU)
 add_definitions(-DSQLITE_ENABLE_STAT4)
+
 # Uncomment this for single-threaded variant (faster)
 #add_definitions(-DSQLITE_THREADSAFE=0)
+
+# This definition is needed by SqliteCpp. Please refer to
+# https://www.sqlite.org/compile.html#enable_column_metadata
+add_definitions(-DSQLITE_ENABLE_COLUMN_METADATA)
 
 if(WIN32)
   #Todo: Exe installation doesn't work 
